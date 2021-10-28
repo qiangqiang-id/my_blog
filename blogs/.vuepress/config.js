@@ -25,7 +25,7 @@ module.exports =  {
   theme: 'reco',
   themeConfig: {
     authorAvatar: '/img/favicon.png',
-    // subSidebar: "auto",
+    subSidebar: "auto",
     // valineConfig: {
     //   appId: "h6i7vXvVEK37fFFwb1DtMJ6W-gzGzoHsz",
     //   appKey: "cYI3hypnGAI00CPuzhNfeY8Q",
