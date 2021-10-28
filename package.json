@@ -2,15 +2,18 @@
   "name": "my-blog",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "reco_luan",
   "license": "MIT",
   "scripts": {
     "blogs:dev": "vuepress dev blogs",
     "blogs:build": "vuepress build blogs"
   },
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-meting": "^0.3.1"
   },
   "dependencies": {
+    "@vuepress-reco/vuepress-plugin-comments": "^1.6.0",
     "vuepress-theme-reco": "^1.6.6"
   }
 }
