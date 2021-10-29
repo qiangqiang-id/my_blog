@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-comments": "^1.6.0",
+    "vuepress-plugin-cursor-effects": "^1.0.2",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
     "vuepress-theme-reco": "^1.6.6"
   }
 }

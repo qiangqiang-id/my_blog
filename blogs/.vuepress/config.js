@@ -1,7 +1,6 @@
 
-const sidebar = require("./siderbar.js");
+// const sidebar = require("./siderbar.js");
 module.exports =  {
-  base: '/',
   title: '小强的博客',
   description: "站在巨人的肩上",
   dest: "public",
@@ -17,10 +16,6 @@ module.exports =  {
         content: "width=device-width,initial-scale=1,user-scalable=no",
       },
     ]
-  ],
-  plugins: [
-    "@vuepress-reco/vuepress-plugin-comments",
-    "vuepress-plugin-meting",
   ],
   theme: 'reco',
   themeConfig: {
@@ -57,7 +52,11 @@ module.exports =  {
     //     link: 'https://www.recoluan.com'
     //   },
     // ],
-     sidebar,
+    displayAllHeaders: true,
+    //  sidebar:[
+    //    '/',
+    //    ['/editor-picture','hello world']
+    //   ],
      type: "blog",
      blogConfig: {
       category: {
@@ -73,8 +72,26 @@ module.exports =  {
     searchMaxSuggestions: 10,
     author: "xiaoqiang",
     startYear: "2021",
+    record: '小强',
   },
   markdown: {
     lineNumbers: true,
   },
+  plugins: [
+   [
+      //鼠标点击特效 先安装在配置， 
+      "cursor-effects",
+      {
+        size: 3,                    // size of the particle, default: 2
+        shape: ['circle'],  // shape of the particle, default: 'star'
+        zIndex: 999999999           // z-index property of the canvas, default: 999999999
+      }
+    ],
+    ["vuepress-plugin-nuggets-style-copy", {
+      copyText: "复制代码",  //vuepress复制粘贴提示插件P 
+      tip: {
+        content: "复制成功!"
+      }
+    }],
+  ],
 }

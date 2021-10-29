@@ -5,6 +5,7 @@ heroText: 记录自己的成长
 bgImageStyle: {
   height: '350px'
 }
+actionText: Guide
 ---
 
 
