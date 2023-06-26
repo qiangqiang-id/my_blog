@@ -22,6 +22,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 也就是我们刚才生成的 secret
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 生成的 secret
           BRANCH: build # 部署到 build
-          FOLDER: /public # vuepress 生成的静态文件存放的地方
+          FOLDER: public # vuepress 生成的静态文件存放的地方
