@@ -14,7 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          run: git switch -c "pull-request"
           persist-credentials: false
           ref: master
           
@@ -29,7 +28,9 @@ jobs:
         run: |
           git config --global user.name "qiangqiang"
           git config --global user.email "qiangq24@outlook.com"
- 
+   
+      - name: Reattach HEAD
+        run: git checkout "$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
           
      #  下载项目依赖    
       - name: Install
