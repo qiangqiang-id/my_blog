@@ -29,8 +29,14 @@ jobs:
           git config --global user.name "qiangqiang"
           git config --global user.email "qiangq24@outlook.com"
           
-      - name: Switch back to the main branch
-        run: git checkout master
+
+      - uses: actions/checkout@master
+      - name: reattach HEAD to Head Ref
+        run: git checkout "$(echo ${{ github.head_ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
+        if: github.head_ref != ''
+      - name: reattach HEAD to Ref
+        run: git checkout "$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
+        if: github.head_ref == ''
           
      #  下载项目依赖    
       - name: Install
