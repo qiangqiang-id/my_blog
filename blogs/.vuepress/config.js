@@ -4,6 +4,13 @@ module.exports = {
   title: '小强的博客',
   description: '站在巨人的肩上',
   dest: 'public',
+  /** 配置md 文件资源加载路径正确 */
+  markdown: {
+    // ......
+    extendMarkdown: (md) => {
+      md.use(require('markdown-it-disable-url-encode'))
+    },
+  },
   head: [
     ['link', { rel: 'icon', href: '/img/favicon.png' }],
     [
