@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "reco_luan",
   "license": "MIT",
+  "homepage": "https://qiangqiang-id.github.io/my_blog",
   "scripts": {
     "blogs:dev": "vuepress dev blogs",
     "blogs:build": "vuepress build blogs"
