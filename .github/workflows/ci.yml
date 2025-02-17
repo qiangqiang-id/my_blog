@@ -23,7 +23,7 @@ jobs:
 
       #  下载项目依赖
       - name: Install
-        run: yarn install
+        run: yarn
 
       # 生成静态文件
       - name: Build
