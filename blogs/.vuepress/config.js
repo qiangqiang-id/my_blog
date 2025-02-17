@@ -84,14 +84,7 @@ module.exports = {
         zIndex: 999999999, // z-index property of the canvas, default: 999999999
       },
     ],
-    [
-      'vuepress-plugin-nuggets-style-copy',
-      {
-        copyText: '复制代码', //vuepress复制粘贴提示插件P
-        tip: {
-          content: '复制成功!',
-        },
-      },
-    ],
+
+    ['vuepress-plugin-code-copy', true],
   ],
 }
