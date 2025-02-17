@@ -9,6 +9,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
+          yarn config set "strict-ssl" false -g
           yarn
           yarn blogs:build
 
@@ -23,3 +24,4 @@ jobs:
 # 第一步是获取源码，使用的 action 是actions/checkout@v2。
 # 第二步是安装依赖和打包
 # 第三步发布，需要三个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录。其中，只有 GitHub 密钥是秘密变量，需要写在双括号里面，其他三个都可以直接写在文件里。
+
