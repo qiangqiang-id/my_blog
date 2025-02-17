@@ -19,15 +19,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16 # node版本
-          cache: 'npm'
+          cache: 'yarn'
 
       #  下载项目依赖
       - name: Install
-        run: npm install
+        run: yarn install
 
       # 生成静态文件
       - name: Build
-        run: npm run blogs:build
+        run: yarn blogs:build
 
       # 部署到 GitHub Pages
       - name: Deploy
