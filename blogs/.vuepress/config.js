@@ -1,6 +1,6 @@
 // const sidebar = require("./siderbar.js");
 module.exports = {
-  // base: '/my_blog/',
+  base: '/my_blog',
   title: '小强的博客',
   description: '站在巨人的肩上',
   dest: 'public',
