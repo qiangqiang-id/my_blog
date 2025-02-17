@@ -1,38 +1,25 @@
-name: Deploy GitHub Pages
-on:
-  push:
-    branches:
-      - master
+name: Build and Deploy
+on: [push]
 jobs:
   build-and-deploy:
-    # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
     steps:
-      # 拉取代码
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
-      #  给当前服务器安装node
-      - name: UseNode
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16 # node版本
-          cache: 'yarn'
+      - name: Install and Build 🔧
+        run: |
+          yarn
+          yarn blogs:build
 
-      #  下载项目依赖
-      - name: Install
-        run: yarn
-
-      # 生成静态文件
-      - name: Build
-        run: yarn blogs:build
-
-      # 部署到 GitHub Pages
-      - name: Deploy
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 生成的 secret
-          BRANCH: gh-pages # 部署到 gh-pages
-          FOLDER: public # vuepress 生成的静态文件存放的地方
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: public
+# 整个流程在master分支发生push事件时触发。
+# 只有一个job，运行在虚拟机环境ubuntu-latest。
+# 第一步是获取源码，使用的 action 是actions/checkout@v2。
+# 第二步是安装依赖和打包
+# 第三步发布，需要三个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录。其中，只有 GitHub 密钥是秘密变量，需要写在双括号里面，其他三个都可以直接写在文件里。
