@@ -9,8 +9,6 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          yarn config set "strict-ssl" false -g
-          yarn config set registry https://registry.yarnpkg.com
           yarn
           yarn blogs:build
 
